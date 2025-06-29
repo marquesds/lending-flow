@@ -1,0 +1,3 @@
+class AprDto {
+  apr: number;
+}
