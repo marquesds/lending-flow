@@ -11,7 +11,7 @@ $ pnpm install
 ## Running Temporal
 
 ```shell
-$ temporal server start-dev ## you need to install Temporal first - brew install temporal
+$ temporal server start-dev # you need to install Temporal first - brew install temporal
 ```
 
 ## Running both controllers and Temporal worker
