@@ -19,3 +19,32 @@ $ temporal server start-dev # you need to install Temporal first - brew install 
 ```shell
 $ pnpm run start:dev
 ```
+
+## Executing the Workflow
+
+```shell
+$ curl -X POST "http://localhost:3000/lending/start" \
+    -d '{
+      "name": "Lucas Marques",
+      "amount": "10000.00",
+      "term": 36,
+      "person_credit_score": 720,
+    }'
+```
+
+Output: Workflow ID.
+
+## Getting the APR value
+
+```shell
+$ curl -X GET "http://localhost:3000/lending/workflow/<WORKFLOW_ID>/apr"
+```
+
+Output: APR value.
+
+## Accepting the terms
+
+```shell
+$ curl -X POST "http://localhost:3000/lending/workflow/<WORKFLOW_ID>/accept-terms" \
+  -d '{"accepted": true}'
+```
