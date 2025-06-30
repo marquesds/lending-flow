@@ -1,6 +1,6 @@
 # Lending Flow
 
-A NestJS and Temporal implementation simulating roughly simulating a lending flow.
+A NestJS and Temporal implementation roughly simulating a mock lending flow.
 
 ## Installing
 
