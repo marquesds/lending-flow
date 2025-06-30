@@ -10,6 +10,13 @@ import type * as activities from './core.activities';
 const { getApr, sendAAN, acceptTerms, depositLoan, sendPayslips } =
   proxyActivities<typeof activities>({
     startToCloseTimeout: '1 minute',
+    retry: {
+      backoffCoefficient: 2,
+      initialInterval: '1 second',
+      maximumAttempts: 10,
+      maximumInterval: '15 seconds',
+      nonRetryableErrorTypes: ['NotEnoughBalanceException'],
+    },
   });
 
 const getAprQuery = defineQuery<number>('getApr');
